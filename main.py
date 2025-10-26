@@ -1,4 +1,5 @@
 from stats import (get_word_count, count_each_character, character_sort)
+import sys
 
 """ 
 ## This was my solution for Bookbot, Chapter 2, Lesson 3
@@ -19,10 +20,13 @@ def get_book_text(path):
     return f.read()
    
 def main():
-  filepath = "books/frankenstein.txt"
-  text = get_book_text(filepath)
+  if len(sys.argv) != 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
+  text = get_book_text(sys.argv[1])
   print("============= BOOKBOT =============")
-  print(f"Analyzing book fount at", filepath,"...")
+  print(f"Analyzing book fount at {sys.argv[1]}...")
 
   word_count = get_word_count(text)
   print("------------ Word Count -----------")
