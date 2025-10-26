@@ -1,4 +1,4 @@
-from stats import get_word_count, count_each_character, character_sort
+from stats import (get_word_count, count_each_character, character_sort)
 
 """ 
 ## This was my solution for Bookbot, Chapter 2, Lesson 3
